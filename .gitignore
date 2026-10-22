@@ -23,6 +23,8 @@ code/project/DebugConfig/
 JLinkLog.txt
 
 # ===== IDE / 编辑器 =====
+# VS Code 的配置因人/因机器而异（绝对路径、调试器路径等），不入库
+.vscode/
 .vs/
 .idea/
 *.suo
