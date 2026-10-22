@@ -1,49 +1,88 @@
-# ===== Keil MDK 编译产物 =====
+# ============================================================
+#  Git 忽略规则 —— 河流流域土壤墒情监测系统
+# ------------------------------------------------------------
+#  本文件只控制「哪些文件不进版本库」，不会删除任何本地文件。
+#  已被跟踪的文件需手动 `git rm -r --cached <路径>` 才停止跟踪
+#  （加 --cached 后磁盘文件依然保留）。
+# ============================================================
+
+# ---------- Keil MDK 编译输出目录 ----------
+# 这些目录每次编译都会重建，体积可达几十 MB，绝不入库
 code/project/Objects/
 code/project/Listings/
 code/project/DebugConfig/
-*.o
-*.d
-*.crf
-*.axf
-*.hex
-*.bin
-*.elf
-*.map
-*.lst
-*.dep
-*.lnp
-*.sct
-*.htm
-*.html
-*.log
+Objects/
+Listings/
+DebugConfig/
+
+# ---------- Keil MDK 编译产物 ----------
+*.o              # 目标文件
+*.d              # 依赖文件
+*.crf            # 交叉引用文件
+*.axf            # 可执行映像
+*.hex            # Intel HEX 固件
+*.bin            # 二进制固件
+*.elf            # ELF 映像
+*.map            # 链接映射表
+*.lst            # 汇编列表
+*.dep            # 依赖描述
+*.lnp            # 链接器参数
+*.sct            # 分散加载脚本（工程生成的那份）
 *.build_log.htm
+*.__i            # 预处理中间文件
+*.iex
+*.i
+
+# ---------- Keil 个人配置 ----------
+# uvguix 是每个用户的窗口布局（含用户名），各人不同，不入库
 *.uvguix.*
 *.uvoptx.bak
-JLinkLog.txt
+*.uvprojx.bak
 
-# ===== IDE / 编辑器 =====
-# VS Code 的配置因人/因机器而异（绝对路径、调试器路径等），不入库
+# ---------- 调试器日志 ----------
+JLinkLog.txt
+JLinkSettings.ini
+*.jlink
+*.trace
+
+# ---------- IDE / 编辑器 ----------
+# VS Code 配置含机器相关的绝对路径与调试器路径，因人而异
 .vscode/
 .vs/
 .idea/
 *.suo
 *.user
+*.userprefs
 *.swp
+*.swo
 *~
 
-# ===== Python =====
+# ---------- Python（调研/生成脚本用） ----------
 __pycache__/
 *.py[cod]
+*$py.class
 .venv/
 venv/
+env/
+.pytest_cache/
+.mypy_cache/
 
-# ===== 系统 =====
+# ---------- 系统文件 ----------
 Thumbs.db
+ehthumbs.db
 Desktop.ini
 .DS_Store
+$RECYCLE.BIN/
 
-# ===== 临时 =====
+# ---------- 临时文件 ----------
 *.tmp
+*.temp
 *.bak
+*.orig
+*.rej
 ~$*
+*.log
+
+# ---------- 白名单：这些 .html 是官方库自带的说明文档，不是编译产物 ----------
+!code/libraries/**/*.html
+!code/libraries/**/*.htm
