@@ -36,6 +36,9 @@ DebugConfig/
 # ---------- Keil 个人配置 ----------
 # uvguix 是每个用户的窗口布局（含用户名），各人不同，不入库
 *.uvguix.*
+# uvoptx 记录调试器设置、断点、上次打开的文件等个人偏好，团队协作时易冲突
+# 注意：uvprojx（工程主文件）必须入库，它定义源文件列表与编译选项
+*.uvoptx
 *.uvoptx.bak
 *.uvprojx.bak
 
