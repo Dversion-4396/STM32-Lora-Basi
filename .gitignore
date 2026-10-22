@@ -1,0 +1,47 @@
+# ===== Keil MDK 编译产物 =====
+code/project/Objects/
+code/project/Listings/
+code/project/DebugConfig/
+*.o
+*.d
+*.crf
+*.axf
+*.hex
+*.bin
+*.elf
+*.map
+*.lst
+*.dep
+*.lnp
+*.sct
+*.htm
+*.html
+*.log
+*.build_log.htm
+*.uvguix.*
+*.uvoptx.bak
+JLinkLog.txt
+
+# ===== IDE / 编辑器 =====
+.vs/
+.idea/
+*.suo
+*.user
+*.swp
+*~
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ===== 系统 =====
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# ===== 临时 =====
+*.tmp
+*.bak
+~$*
